@@ -7,6 +7,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.time.LocalDate;
+import java.time.YearMonth;
 import java.time.format.DateTimeFormatter;
 
 /**
@@ -23,7 +24,7 @@ public class ExampleServiceTest {
     @Test
     public void testSave() {
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM");
-        LocalDate time = LocalDate.parse("2021-11", dateTimeFormatter);
+        YearMonth time = YearMonth.parse("2021-11", dateTimeFormatter);
         Example example = new Example().setTime(time);
         exampleService.save(example);
     }

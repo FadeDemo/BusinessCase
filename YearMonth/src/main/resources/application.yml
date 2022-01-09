@@ -6,3 +6,6 @@ spring:
     password: ${postgresql.password}
     url: ${postgresql.url}
     driver-class-name: org.postgresql.Driver
+
+mybatis-plus:
+  type-handlers-package: org.fade.demo.businesscase.yearmonth.typehandler

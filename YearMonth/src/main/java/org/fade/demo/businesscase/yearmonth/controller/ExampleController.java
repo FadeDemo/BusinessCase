@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import java.time.YearMonth;
+import java.util.List;
 
 /**
  * @author fade
@@ -24,6 +26,22 @@ public class ExampleController {
     public ResponseEntity<Void> save(Example example) {
         exampleService.save(example);
         return ResponseEntity.ok().body(null);
+    }
+
+    @PostMapping("/queryAll")
+    public ResponseEntity<List<Example>> queryAll() {
+        return ResponseEntity.ok(exampleService.queryAll());
+    }
+
+    @PostMapping("/queryByIdAndTime")
+    public ResponseEntity<List<Example>> queryByIdAndTime(Long id, YearMonth time) {
+        return ResponseEntity.ok(exampleService.queryByIdAndTime(id, time));
+    }
+
+    @PostMapping("/update")
+    public ResponseEntity<Void> update(Example example) {
+        exampleService.update(example);
+        return ResponseEntity.ok(null);
     }
 
 }

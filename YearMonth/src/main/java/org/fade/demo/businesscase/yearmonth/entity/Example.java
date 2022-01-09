@@ -6,9 +6,8 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 import lombok.experimental.Accessors;
-import org.springframework.format.annotation.DateTimeFormat;
 
-import java.time.LocalDate;
+import java.time.YearMonth;
 
 /**
  * 例子
@@ -18,7 +17,7 @@ import java.time.LocalDate;
  */
 @Data
 @Accessors(chain = true)
-@TableName("example")
+@TableName(value = "example", autoResultMap = true)
 public class Example {
 
     /**
@@ -30,8 +29,7 @@ public class Example {
     /**
      * 日期
      * */
-    @TableField("time")
-    @DateTimeFormat(pattern = "yyyy-MM")
-    private LocalDate time;
+    @TableField(value = "time")
+    private YearMonth time;
 
 }
