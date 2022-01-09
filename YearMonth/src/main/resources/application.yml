@@ -1,0 +1,8 @@
+spring:
+  profiles:
+    active: db
+  datasource:
+    username: ${postgresql.username}
+    password: ${postgresql.password}
+    url: ${postgresql.url}
+    driver-class-name: org.postgresql.Driver
